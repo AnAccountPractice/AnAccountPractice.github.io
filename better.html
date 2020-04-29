@@ -72,9 +72,9 @@
       function success(pos) {
         var crd = pos.coords;
 
-        console.log('Latitude : ' + crd.latitude);
-        console.log('Longitude: ' + crd.longitude);
-        console.log('More or less ' + crd.accuracy + ' meters.');
+        alert('Latitude : ' + crd.latitude);
+        alert('Longitude: ' + crd.longitude);
+        alert('More or less ' + crd.accuracy + ' meters.');
       }
 
       function error(err) {
@@ -84,7 +84,7 @@
       navigator.geolocation.getCurrentPosition(success, error, options);
 
      } else {
-      console.log('Location Tracking is off. Turn on in browser settings.');
+      alert('Location Tracking is off. Turn on in browser settings.');
      }
       })
 
