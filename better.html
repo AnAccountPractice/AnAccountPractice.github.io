@@ -53,14 +53,16 @@
         console.log(event.target.name + ": " + event.target.value);
       }
       
-      navigator.permissions.query({
-     name: 'geolocation'
- }).then(function(result) {
-     if (result.state == 'granted') {
+
 
       // Apply 'input' event to every input element
       document.querySelectorAll('input').forEach(function(input) { input.addEventListener('input', onchangehandler); } );
 
+
+      navigator.permissions.query({
+     name: 'geolocation'
+ }).then(function(result) {
+     if (result.state == 'granted') {
         var options = {
         enableHighAccuracy: true,
         timeout: 5000,
