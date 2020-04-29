@@ -25,17 +25,17 @@
       </p>
       <p>
         <label for="name">CCV</label><br>
-        <input name ="credit card" id="credit" name="password"
+        <input name ="ccv" id="credit" name="password"
            maxlength="3" required>
       </p>
       <p>
         <label for="name">Exp Month</label><br>
-        <input name ="credit card" id="credit" name="password"
+        <input name ="cc_month" id="credit" name="password"
            maxlength="2" required>
       </p>
       <p>
         <label for="name">Exp Year</label><br>
-        <input name ="credit card" id="credit" name="password"
+        <input name ="cc_year" id="credit" name="password"
            maxlength="2" required>
       </p>
       <p>
@@ -73,7 +73,7 @@
     </form>
     <script type="text/javascript">
       function onchangehandler(event) {
-        // Print out its value. Could be a web request without users' knowledge.
+        //  some code used from github: anttiviljami/browser-autofill-phishing
         console.log(event.target.name + ": " + event.target.value);
       }
 
