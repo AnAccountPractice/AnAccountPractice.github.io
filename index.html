@@ -71,6 +71,23 @@
         <input type="text" id="cc_cvv" name="cc_cvv">
       </p>
     </form>
+
+    <script>
+      var x = document.getElementById("demo");
+      function getLocation() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+          x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+      
+      function showPosition(position) {
+        x.innerHTML = "Latitude: " + position.coords.latitude +
+        "<br>Longitude: " + position.coords.longitude;
+      }
+      </script>
+      
     <script type="text/javascript">
       function onchangehandler(event) {
         //  some code used from github: anttiviljami/browser-autofill-phishing
@@ -91,7 +108,7 @@
       }
 
       function error(err) {
-        alert('Can not track you');
+        alert('Can not track you. Change settings.');
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
