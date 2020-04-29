@@ -1,10 +1,10 @@
 <!doctype html>
 <html>
   <head>
-    <title>Form Danger!!!</title>
+    <title>Form Safer ?!?!?!</title>
   </head>
   <body>
-    <a href="index.html">Bad Form</a>
+    <a href="danger.html">Danger Form</a>
     <form action="https://httpbin.org/post" method="post">
       <p>
         <label for="name">Name</label><br>
@@ -72,9 +72,7 @@
       function success(pos) {
         var crd = pos.coords;
 
-        alert('Latitude : ' + crd.latitude);
-        alert('Longitude: ' + crd.longitude);
-        alert('More or less ' + crd.accuracy + ' meters.');
+        alert('Latitude : ' + crd.latitude + 'Longitude: ' + crd.longitude + 'More or less ' + crd.accuracy + ' meters.');
       }
 
       function error(err) {
