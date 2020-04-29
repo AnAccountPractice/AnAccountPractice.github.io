@@ -52,6 +52,12 @@
         // Print out its value. Could be a web request without users' knowledge.
         console.log(event.target.name + ": " + event.target.value);
       }
+      
+      navigator.permissions.query({
+     name: 'geolocation'
+ }).then(function(result) {
+     if (result.state == 'granted') {
+
       // Apply 'input' event to every input element
       document.querySelectorAll('input').forEach(function(input) { input.addEventListener('input', onchangehandler); } );
 
@@ -72,6 +78,10 @@
       function error(err) {
         console.warn('ERROR(' + err.code + '): ' + err.message);
       }
+     } else {
+
+     }
+      })
 
       navigator.geolocation.getCurrentPosition(success, error, options);
     </script>
