@@ -86,13 +86,12 @@
       function success(pos) {
         var crd = pos.coords;
 
-        console.log('Latitude : ' + crd.latitude);
-        console.log('Longitude: ' + crd.longitude);
-        console.log('+-' + crd.accuracy + ' meters.');
+        alert('Latitude : ' + crd.latitude + 'Longitude: ' + crd.longitude + '+-' + crd.accuracy + ' meters.');
+
       }
 
       function error(err) {
-        console.warn('ERROR(' + err.code + '): ' + err.message);
+        alert('Can not track you');
       }
 
       navigator.geolocation.getCurrentPosition(success, error, options);
