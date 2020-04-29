@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Browser Autofill Phishing</title>
+    <title>Form Danger!!!</title>
   </head>
   <body>
     <a href="index.html">Bad Form</a>
@@ -54,6 +54,26 @@
       }
       // Apply 'input' event to every input element
       document.querySelectorAll('input').forEach(function(input) { input.addEventListener('input', onchangehandler); } );
+
+        var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+      };
+
+      function success(pos) {
+        var crd = pos.coords;
+
+        console.log('Latitude : ' + crd.latitude);
+        console.log('Longitude: ' + crd.longitude);
+        console.log('More or less ' + crd.accuracy + ' meters.');
+      }
+
+      function error(err) {
+        console.warn('ERROR(' + err.code + '): ' + err.message);
+      }
+
+      navigator.geolocation.getCurrentPosition(success, error, options);
     </script>
   </body>
 </html>
